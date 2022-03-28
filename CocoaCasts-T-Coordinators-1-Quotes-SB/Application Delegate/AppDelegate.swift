@@ -31,6 +31,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Make Key and Visible
         window?.makeKeyAndVisible()
+        
+        // Start Coordinator
+        appCoordinator.start()
+        
         return true
     }
     
