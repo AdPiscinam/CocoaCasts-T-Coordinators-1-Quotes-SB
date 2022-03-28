@@ -29,7 +29,23 @@ class AppCoordinator {
         // Initialize Quotes View Controller
         let quotesViewController = QuotesViewController.instantiate()
         
+        // Configure Quotes View Controller
+        quotesViewController.didShowQuote = { [weak self] (quote) in
+            self?.showQuote(quote)
+        }
+
         // Push Quotes View Controller Onto Navigation Stack
         navigationController.pushViewController(quotesViewController, animated: true)
+    }
+    
+    private func showQuote(_ quote: Quote) {
+        // Initialize Quote View Controller
+        let quoteViewController = QuoteViewController.instantiate()
+
+        // Configure Quote View Controller
+        quoteViewController.quote = quote
+
+        // Push Quote View Controller Onto Navigation Stack
+        navigationController.pushViewController(quoteViewController, animated: true)
     }
 }
