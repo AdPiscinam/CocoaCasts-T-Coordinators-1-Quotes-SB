@@ -10,15 +10,28 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     // MARK: - Properties
     
     var window: UIWindow?
-
+    
+    // MARK: -
+    
+    private let appCoordinator = AppCoordinator()
+    
     // MARK: - Application Life Cycle
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        // Instantiate instance of UIWindow class
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        // Configure Window
+        window?.rootViewController = appCoordinator.rootViewController
+        
+        // Make Key and Visible
+        window?.makeKeyAndVisible()
         return true
     }
-
+    
 }

@@ -7,5 +7,14 @@ import UIKit
 
 class AppCoordinator {
 
-    private let navigationController = UINavigationController()
+    // MARK: - Properties
+
+       private let navigationController = UINavigationController()
+
+       // MARK: - Public API
+
+       var rootViewController: UIViewController {
+           return navigationController
+       }
+
 }
