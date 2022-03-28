@@ -7,4 +7,15 @@ import UIKit
 
 protocol Storyboardable {
     
+    // MARK: - Properties
+    
+    static var storyboardName: String { get }
+    static var storyboardBundle: Bundle { get }
+    
+    // MARK: -
+    
+    static var storyboardIdentifier: String { get }
+    // MARK: - Methods
+    
+    static func instantiate() -> Self
 }
