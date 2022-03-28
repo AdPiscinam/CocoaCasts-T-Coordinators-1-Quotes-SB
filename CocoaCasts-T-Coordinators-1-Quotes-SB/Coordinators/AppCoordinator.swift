@@ -7,4 +7,5 @@ import UIKit
 
 class AppCoordinator {
 
+    private let navigationController = UINavigationController()
 }
