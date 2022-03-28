@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuotesViewController: UIViewController {
+class QuotesViewController: UIViewController, Storyboardable{
     
     // MARK: - Properties
     
@@ -74,9 +74,8 @@ class QuotesViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func settings(_ sender: UIBarButtonItem) {
-        guard let settingsViewController = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: SettingsViewController.storyboardIdentifier) as? SettingsViewController else {
-            fatalError("Unable to Instantiate Settings View Controller")
-        }
+        // Initialize Settings View Controller
+        let settingsViewController = SettingsViewController.instantiate()
         
         // Present Settings View Controller
         present(settingsViewController, animated: true)
